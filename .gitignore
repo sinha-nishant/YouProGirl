@@ -115,3 +115,7 @@ dmypy.json
 *.xml
 *.xml
 .idea/workspace.xml
+
+*.idea/misc.xml
+*.xml
+*.iml
