@@ -12,5 +12,8 @@ app = Flask(__name__)
 def you_pro_girl():
     return render_template('index.html', courses = db.get_courses(connection))
 
+@app.route('/shop')
+def shop():
+    return render_template('shop.html', products = db.get_products(connection) )
 if __name__ == '__main__':
     app.run()
