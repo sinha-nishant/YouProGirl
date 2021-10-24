@@ -1,0 +1,29 @@
+{% extends "base.html"%}
+{% block content %}
+    <div class="container">
+        <div class="row text-center">
+            <div>The Learning Platform for Women, by Women</div>
+        </div>
+        {% for i in range(courses| length) %}
+            {% if i % 2 == 0 %}
+                <div class="row">
+                    <div class="col-6">
+                        {{ courses[i]["title"] }}
+                    </div>
+                    <div class="col-6">
+                        Image
+                    </div>
+                </div>
+            {% else %}
+                <div class="row">
+                    <div class="col-6">
+                        Image
+                    </div>
+                    <div class="col-6">
+                        {{ courses[i]["title"] }}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock content %}
