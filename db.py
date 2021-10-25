@@ -5,5 +5,5 @@ from typing import List, Dict
 def get_courses(connection: database) -> List[Dict[str, str]]:
     return list(connection.Courses.find())
 
-def get_products(connection: database) -> List[Dict[str, str]]:
+def get_products(connection: database) -> List[Dict]:
     return list(connection.Products.find())

@@ -13,8 +13,12 @@ def you_pro_girl():
     return render_template('index.html')
 
 @app.route('/courses')
-def courses():
-    return render_template('courses.html', courses = db.get_courses(connection))
+@app.route('/courses/<string:id>')
+def courses(title=None):
+    if title:
+        return
+    else:
+        return render_template('courses.html', course_list = db.get_courses(connection))
 
 @app.route('/shop')
 def shop():
