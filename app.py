@@ -13,10 +13,10 @@ def you_pro_girl():
     return render_template('index.html')
 
 @app.route('/courses')
-@app.route('/courses/<string:id>')
-def courses(title=None):
-    if title:
-        return
+@app.route('/courses/<string:course_id>')
+def courses(course_id=None):
+    if course_id:
+        return render_template('course.html', course_info = db.get_course(connection, course_id=course_id))
     else:
         return render_template('courses.html', course_list = db.get_courses(connection))
 
