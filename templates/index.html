@@ -1,40 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
+{% extends "base.html"%}
+{% block head %}
+    <style>
+        #learning-platform {
+            background-color: #fdf30d ;
+        }
 
-    <link rel="stylesheet" href="home.css">
-</head>
-<body>
-    {%  include 'navbar.html' %}
+        #teachers {
+            background-color: #3690e8;
+            color: white;
+        }
 
-    <div class="container">
-        <div class="row text-center">
-            <div>The Learning Platform for Women, by Women</div>
+        #community {
+            background-color: #f39a03;
+            color: white;
+        }
+
+        #curriculum {
+            background-color: #735ee3;
+            color: white;
+        }
+
+        #about-us {
+            font-size: 1.8rem;
+        }
+    </style>
+{% endblock head %}
+{% block content %}
+    <div class="container-fluid p-0">
+        <div class="card bg-dark text-white ratio ratio-16x9 rounded-0 border-0">
+            <img class="card-img" src="https://images.unsplash.com/photo-1594928274321-4497d98e4f48?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80" alt="Card Image">
+            <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                <div class="w-50">
+                    <h1 class="card-title text-center display-1" id="slogan">The Learning Platform for Women, by Women</h1>
+                </div>
+            </div>
         </div>
-        {% for i in range(courses| length) %}
-            {% if i % 2 == 0 %}
-                <div class="row">
-                    <div class="col-6">
-                        {{ courses[i]["title"] }}
-                    </div>
-                    <div class="col-6">
-                        Image
-                    </div>
+        <div  id="learning-platform" class="py-5">
+            <div class="d-flex justify-content-center pt-5">
+                <div class="col-6 text-center"><h1 class="display-4">Learning Together From the Comfort of Your Home</h1></div>
+            </div>
+            <div class="d-flex justify-content-center py-5">
+                <a href=""><button id="about-us" type="button" class="btn btn-outline-dark btn-lg">About Us</button></a>
+            </div>
+        </div>
+        <div class="card-group">
+            <div id="teachers" class="card rounded-0 p-0">
+                <div class="card-img-top d-flex justify-content-center py-5"><i class="fas fa-chalkboard-teacher fa-10x"></i></div>
+                <div class="card-body px-4">
+                    <h5 class="card-title">Expert Teachers</h5>
+                    <p class="card-text">Courses taught by female industry experts who break down complex concepts.</p>
                 </div>
-            {% else %}
-                <div class="row">
-                    <div class="col-6">
-                        Image
-                    </div>
-                    <div class="col-6">
-                        {{ courses[i]["title"] }}
-                    </div>
+            </div>
+            <div id="community" class="card rounded-0 p-0">
+                <div class="card-img-top d-flex justify-content-center py-5"><i class="fas fa-users fa-10x"></i></div>
+                <div class="card-body px-4">
+                    <h5 class="card-title">Online Community</h5>
+                    <p class="card-text">Join a supportive community of independent women with a drive to grow their skills.</p>
                 </div>
-            {% endif %}
-        {% endfor %}
+            </div>
+            <div id="curriculum" class="card rounded-0 p-0">
+                <div class="card-img-top d-flex justify-content-center py-5"><i class="fab fa-leanpub fa-10x"></i></div>
+                <div class="card-body px-4">
+                    <h5 class="card-title">Flexible Curriculum</h5>
+                    <p class="card-text">Choose among a variety of courses ranging from personal finance to hands-on skills.</p>
+                </div>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+{% endblock content %}

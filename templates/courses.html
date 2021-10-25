@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block head %}
+<style>
+    body {
+        background-color: #000000;
+        color: white;
+    }
+
+    .card {
+        background-color: black;
+    }
+
+    .card-text {
+        font-size: 1.6rem;
+    }
+
+    img {
+        height: 10vh;
+        object-fit: cover;
+    }
+</style>
+{% endblock head %}
+{% block content %}
+{% for i in range(courses| length) %}
+    <div class="card p-0 border-top-0 border-white rounded-0">
+        <div class="row">
+        {% if i % 2 == 0 %}
+            <div class="col-6 p-0 rounded-0 border border-white">
+              <img src="{{ courses[i]["image_url"] }}" class="img-fluid" alt="...">
+            </div>
+            <div class="col-6 p-0 d-flex align-items-center">
+                <div class="card-body px-5 text-center">
+                    <h1 class="card-title">{{ courses[i]["title"] }}</h1>
+                    <p class="card-text py-3">{{ courses[i]["description"] }}</p>
+                </div>
+            </div>
+        {% else %}
+            <div class="col-6 p-0 d-flex align-items-center">
+                <div class="card-body px-5 text-center">
+                    <h1 class="card-title">{{ courses[i]["title"] }}</h1>
+                    <p class="card-text py-3">{{ courses[i]["description"] }}</p>
+                </div>
+            </div>
+            <div class="col-6 p-0 rounded-0 border border-white">
+              <img src="{{ courses[i]["image_url"] }}" class="img-fluid" alt="...">
+            </div>
+        {% endif %}
+        </div>
+    </div>
+{% endfor %}
+{% endblock content %}
