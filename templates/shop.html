@@ -1,21 +1,50 @@
 {% extends "base.html"%}
+{% block head %}
+    <style>
+    body{
+        background-color: #3690e8;
+    }
+
+    #title-text{
+        color: aliceblue;
+        text-align: center;
+        padding: 10px;
+    }
+    .card{
+        background-color: #f39a03;
+        text-align: center;
+    }
+    #product-price{
+        font-weight: bold;
+    }
+
+
+    </style>
+
+{% endblock head %}
+
 {% block content %}
 
+    <div class="title">
+        <h2 id="title-text">Choose From Our Wide Variety Of Products </h2>
+    </div>
+
+
 <div class="container">
-      <div class="row">
-          {% for i in range(products| length) %}
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ products[i]["img"] }}" class="card-img-top" alt="...">
+    <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 g-4">
+        {% for product in products %}
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{{ product["img"] }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">{{ products[i]["title"] }}</h5>
-                        <p class="card-text"><span>$</span>{{ products[i]["price"] }}</p>
+                        <h5 class="card-title">{{ product["title"] }}</h5>
+                        <p class="card-text" id="product-price"><span>$</span>{{ product["price"] }}</p>
                         <a href="#" class="btn btn-primary">Purchase</a>
                     </div>
                 </div>
-            </div>
-          {%  endfor %}
-      </div>
+             </div>
+        {% endfor %}
+    </div>
 </div>
 
 
