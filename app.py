@@ -23,5 +23,10 @@ def courses(course_id=None):
 @app.route('/shop')
 def shop():
     return render_template('shop.html', products = db.get_products(connection))
+
+@app.route('/about-us')
+def about():
+    return render_template('about.html')
+
 if __name__ == '__main__':
     app.run()
