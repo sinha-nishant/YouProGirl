@@ -28,5 +28,17 @@ def shop():
 def about():
     return render_template('about.html')
 
+@app.route('/news')
+def news():
+    from newsapi import NewsApiClient
+
+    newsapi = NewsApiClient(api_key=environ.get('NEWS-KEY'))
+
+    response = newsapi.get_everything(qintitle="(women OR female OR woman) (business OR leader OR successful OR powerful) -sex -guinea -unsafe",
+                                           sort_by='popularity',
+                                           page_size=18)
+
+    return render_template('news.html', news=response)
+
 if __name__ == '__main__':
     app.run()
