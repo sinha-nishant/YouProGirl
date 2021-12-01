@@ -7,14 +7,25 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     {# Google AdSense #}
     <script data-ad-client="ca-pub-6605834871501684" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>    {% block head %}
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WCXZSJP');</script>
+    <!-- End Google Tag Manager -->
     {% endblock head %}
 </head>
 <body class="container-fluid p-0 m-0">
-{#    base template for website. extend from this file#}
-{#    navbar at top#}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCXZSJP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    {#    base template for website. extend from this file#}
+    {#    navbar at top#}
     {% include "navbar.html" %}
 
-{#    This is where the body of each page should be#}
+    {#    This is where the body of each page should be#}
     {% block content %}
     {% endblock content %}
     <div style="background-color: black; padding-top: 4%; padding-bottom: 2%; width: 100%;">
