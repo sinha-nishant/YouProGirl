@@ -119,3 +119,4 @@ dmypy.json
 *.idea/misc.xml
 *.xml
 *.iml
+*.tar
